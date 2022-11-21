@@ -27,7 +27,7 @@ app.post("/api/flexdoc", async function (req, res) {
     console.log(jsdata);
     let parsed = await JSON.parse(jsdata);
     fs.writeFileSync("jsonData.json", JSON.stringify(parsed.status.repdata, null, 2), (err) => console.log);
-    res.send(parsed);
+    res.send(jsdata);
   } catch (err) {
     res.send(err);
   }
